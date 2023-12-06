@@ -16,7 +16,8 @@ jobs:
       - run: |
           echo "The job trigger: ${{ github.event_name }}"
           echo "The branch name is ${{ github.ref }}"
-      - uses: actions/checkout@v4
+      - name: Checkout the code
+        uses: actions/checkout@v4
 
-      - run: |
-          ls
+      - name: List all the repo files
+        run: tree
