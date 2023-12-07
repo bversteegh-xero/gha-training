@@ -3,7 +3,7 @@ on:
   [workflow_dispatch]
 jobs:
   call-workflow:
-    uses: ./.github/workflows/reusuable.yml
+    uses: ./.github/workflows/reusable.yml
     with:
       who-to-greet: '@bversteegh-xero'
   use-output:
@@ -11,6 +11,3 @@ jobs:
     needs: [call-workflow]
     steps:
       - run: echo "Time was ${{ needs.call-workflow.outputs.current-time }}"
-    
-  
-    
